@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(helmet());
+
 //1 - Content Security Policy
 app.use(helmet.contentSecurityPolicy({
   directives: {
@@ -29,19 +30,15 @@ app.use(helmet.contentSecurityPolicy({
   }
 }));
 
-//Index page (static HTML)
 app.route('/')
   .get(function (req, res) {
     res.sendFile(process.cwd() + '/views/index.html');
   });
 
-//For FCC testing purposes
 fccTestingRoutes(app);
 
-//Routing for API 
 apiRoutes(app);  
-    
-//404 Not Found Middleware
+
 app.use(function(req, res, next) {
   res.status(404)
     .type('text')

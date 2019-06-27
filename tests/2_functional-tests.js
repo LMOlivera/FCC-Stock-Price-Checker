@@ -1,19 +1,12 @@
-/*
-*
-*
-*       FILL IN EACH FUNCTIONAL TEST BELOW COMPLETELY
-*       -----[Keep the tests in the same order!]-----
-*       (if additional are added, keep them at the very end!)
-*/
-
 var chaiHttp = require('chai-http');
 var chai = require('chai');
+var expect = require('chai').expect;
 var assert = chai.assert;
 var server = require('../server');
 
 chai.use(chaiHttp);
 
-suite('Functional Tests', function() {
+suite('Functional Tests', function() { // 7 - Functional testing
     
     suite('GET /api/stock-prices => stockData object', function() {
       
