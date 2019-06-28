@@ -8,7 +8,8 @@ let Schema = mongoose.Schema;
 let stockSchema = new Schema({
   stock: {type: String, required: true, unique: true},
   price: {type: Number, required: true},
-  likes: {type: String, required: true}
+  likes: {type: String, required: true},
+  ips_liked: [{type: String}]
 });
 
 //Glitch is giving errors in the next line but is working as it should!
